@@ -1,8 +1,15 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-    root{
-        --bluevoilet:var(--bluevoilet)
+    :root{
+        --primary-color:rgba(253, 253, 253, 0.693);
+        --secondary-color:rgb(43, 2, 83);
+        --pine-green:rgb(3, 75, 56);
+        --golden:rgb(234, 209, 129);
+        --linear-gradient:linear-gradient(rgb(157, 0, 255),rgb(0, 247, 255));
+        --linear-gradient2:linear-gradient(rgb(0, 247, 255)rgb(157, 0, 255));
+        --white:white;
     }
+
     *{
         box-sizing: border-box;
         padding: 0;
@@ -15,7 +22,8 @@
         box-sizing: border-box;
     }
     body {
-        background: linear-gradient(45deg,rgb(55, 217, 249),rgb(209, 2, 250));
+        background: var(--primary-color);
+        color: var(--secondary-color);
         font-family: "Poppins", sans-serif;
         z-index: -1;      
     }
@@ -25,15 +33,15 @@
         position: fixed;
         height: 100px;
         width: 100%;
-        background-color: #05d0f0; 
+        background-color: var(--primary-color);
+        color: var(--secondary-color); 
         align-items: center;
         justify-content: space-between;
-        border-bottom: 2px solid rgba(174, 166, 166, 0.451);
+        border-bottom: 2px solid rgba(230, 218, 152, 0.519);
         padding: 10px;
         z-index: 1;
     }
     .logo {
-        color: #f3edf0;
         font-size: 20px;
         letter-spacing: 1px;
         font-weight: 500;
@@ -42,10 +50,10 @@
         text-decoration: none;
         transform: translateX(-100%);
         opacity: 0;
-        animation: RightSlide 2s ease forwards
+        animation: RightSlide 2s ease forwards;
       }
     .logo span{
-        color: #09f821;            
+        color: var(--golden);            
     }
     @keyframes  RightSlide{
         0%{
@@ -71,16 +79,16 @@
     }
     .navbar ul li a{
         text-decoration: none;
-        color: white;
+        color: var(--secondary-color);
         position: relative;
     }
     .navbar ul li a:hover{
-        color: #09fd3a;
+        color: var(--golden);
     }
     .navbar li a::before{
         content: '';
         position: absolute;
-        background-color: #08e44a;
+        background-color: var(--golden);
         height: 4px;
         width: 70px;
         bottom: -10px;
@@ -147,7 +155,7 @@
         }
         .navbar.active{
             display: block;
-            color: greenyellow;
+            color: var(--golden);
         }
     }
 
@@ -159,8 +167,7 @@
         padding: 50px 0px 30px 20px;
         align-items: center;
         justify-content: center;
-        color: #fafffb;
-        background: linear-gradient(45deg,rgb(2, 250, 246),rgb(170, 0, 255));
+
     }
    
     .row{
@@ -172,66 +179,66 @@
         padding-top: 70px;
     }
     .left h2{
+        color: var(--secondary-color);
         font-size: 36px;
         font-weight: 500;
     }
     .left h2 span{
-        color: #08e44a;
+        color: var(--golden);
     }     
     .left h4{
-        color: #08e44a;
+        color: var(--golden);
     }
     .home-btn button {
         margin: 10px;
     }
     .home-btn button{
-        background: linear-gradient(30deg,rgb(171, 12, 224),rgb(4, 239, 188));
-        color: rgb(238, 238, 239);
+        background: var(--linear-gradient);
+        color: var(--primary-color);
         font-size: 16px;
         font-weight: 500;
         border-radius: 30px;
         border: 3px solid rgb(255, 255, 255);
         padding: 10px 30px;
         cursor: pointer;
-        animation:Bottom 1s ease forwards;
-        animation-delay: 1.4s;
     }
     .home-btn button:hover{
-        color: #0afb22ef;
-        border: 3px solid rgb(246, 250, 251);
-        background: linear-gradient(30deg,rgb(7, 242, 250),rgb(176, 4, 239));
-        transform: scalex(1.05);
-        transition: 2s;
+        background: transparent;
+        color: var(--golden);
+        border: 3px solid var(--golden);
+
     }
     .social{
         margin: 10px;
     }
     .social i{
-        background: linear-gradient(30deg,rgb(171, 12, 224),rgb(4, 239, 188));
-        color: rgb(250, 247, 252);
+        background: var(--linear-gradient);
+        color: var(--secondary-color);
+        border: 3px solid var(--primary-color);
         font-size: 18px;
         font-weight: 500;
         height: 40px;
         width: 40px;
-        border: 3px solid rgba(250, 244, 244, 0.958);
         padding: 10px;
-        border-radius: 30px;
+        margin: 10px 5px;
+        border-radius: 20px;
     } 
     .social i:hover{
-        background: linear-gradient(rgb(12, 227, 202),rgb(172, 3, 245));
-        color: rgb(169, 6, 251);
-        border: 3px solid rgba(246, 241, 241, 0.99);
-       
+        background-color: var(--linear-gradient2);
+        color: var(--golden);
+        border: 3px solid var(--golden);
     }  
   
     .right{
         text-align: center;
     }
+   
+    
     .right .img-box img{
         width: 300px;
         height: 300px;
         border-radius: 100%;
-        border: 8px solid rgb(239, 236, 241);
+        border: 8px solid var(--golden);
         animation: scaleout 2s ease forwards;
         scale: 0;
     }  
@@ -272,7 +279,6 @@
             height: 32px;
             margin: 10px 1px;
         }
-        
         .right{
             width: 50%;
             padding: 30px;
@@ -368,7 +374,7 @@
     width: 350px;
     height: 400px;
     border-radius: 20px;
-    border: 10px solid rgb(128, 9, 233);
+    border: 10px solid var(--pine-green);
 }
 .about .text h2{
     font-size: 30px;
@@ -376,7 +382,7 @@
 
     }
 .about .text h2 span{
-    color: #09fd3a;
+    color: var(--golden);
     font-size: 36px;
 }
 .about-btn{
@@ -384,24 +390,23 @@
     padding: 20px;
 }
 .about-btn button{
-    background: linear-gradient(30deg,rgb(171, 12, 224),rgb(4, 239, 188));
-    color: rgb(238, 238, 239);
+    background: var(--linear-gradient);
+    color: var(--primary-color);
     width: 50%;
     font-size: 16px;
     font-weight: 500;
     border-radius: 30px;
-    border: 3px solid rgb(255, 255, 255);
+    border: 3px solid var(--pine-green);
     padding: 10px 30px;
     cursor: pointer;
     animation:Bottom 1s ease forwards;
     animation-delay: 1.4s;
 }
 .about-btn button:hover{
-    color: #0afb22ef;
-    border: 3px solid rgb(246, 250, 251);
-    background: linear-gradient(30deg,rgb(6, 245, 213),rgb(137, 4, 239));
-    transform: scalex(1.05);
-    transition: 2s;
+    color: var(--golden);
+    border: 3px solid var(--pine-green);
+    background:transparent;
+
 }
 
 
